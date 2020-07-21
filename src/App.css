@@ -1,1 +1,36 @@
+body {
+  background-color: #fff;
+}
 
+.App {
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+
+  margin: 0 auto;
+}
+
+.nav__item {
+  display: block;
+  height: 30px;
+  width: 70px;
+
+  text-decoration: none;
+  color: black;
+  background-color: red;
+  line-height: 30px;
+
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.active {
+  border: 2px solid black;
+}

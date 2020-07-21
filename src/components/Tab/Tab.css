@@ -1,0 +1,31 @@
+.tab {
+  width: 100px;
+  height: 50px;
+
+  cursor: pointer;
+  color: blue;
+  background-color: #fff;
+
+  border: none;
+  border-bottom: 2px solid black;
+  border-radius: 5px 5px 0 0;
+
+  transform: translateY(2px);
+
+  outline: none;
+}
+
+.tab:hover {
+  border: 2px solid black;
+}
+
+.tab:focus {
+  border: 1px solid black;
+  border-bottom: none;
+}
+
+.active {
+  border: 2px solid black;
+  border-bottom: none;
+  z-index: 1;
+}
