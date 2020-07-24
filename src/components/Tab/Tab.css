@@ -23,9 +23,3 @@
   border: 1px solid black;
   border-bottom: none;
 }
-
-.active {
-  border: 2px solid black;
-  border-bottom: none;
-  z-index: 1;
-}

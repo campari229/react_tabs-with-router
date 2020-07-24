@@ -8,7 +8,6 @@ import {
 
 import { Tab } from '../Tab/Tab';
 import { TabInterface } from '../Interfaces/Interfaces';
-import { TabInfo } from '../TabInfo/TabInfo';
 
 import './Tabs.css';
 
@@ -25,7 +24,7 @@ export const Tabs: React.FC<Props> = ({ tabs }) => (
           {
             tabs.map((tab, index) => (
               <li key={tab.title}>
-                <NavLink activeClassName="" to={`/tabs/${tab.id}`}>
+                <NavLink to={`/tabs/${tab.id}`}>
                   <Tab
                     title={tab.title}
                     index={index}
@@ -36,7 +35,16 @@ export const Tabs: React.FC<Props> = ({ tabs }) => (
           }
         </ul>
         <Switch>
-          <Route path="/tabs/:tab?" render={({ match }) => <TabInfo tabs={tabs} match={match} />} />
+          <Route
+            path="/tabs/:tab?"
+            render={({ match }) => (
+              <div className="info-wrapper">
+                <p className="info">
+                  {tabs.find(tab => tab.id === match.params.tab)?.content}
+                </p>
+              </div>
+            )}
+          />
         </Switch>
       </BrowserRouter>
     </div>
