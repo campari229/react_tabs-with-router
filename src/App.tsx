@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  BrowserRouter,
   Switch,
   NavLink,
   Route,
@@ -21,35 +20,33 @@ const Home = () => <h2>Home</h2>;
 
 const App: React.FC = () => (
   <div className="App">
-    <BrowserRouter>
-      <nav>
-        <ul className="list">
-          <li>
-            <NavLink
-              activeClassName="nav__item active"
-              className="nav__item"
-              to="/"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              activeClassName="nav__item active"
-              className="nav__item"
-              to="/tabs"
-            >
-              Tabs
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+    <nav>
+      <ul className="list">
+        <li>
+          <NavLink
+            activeClassName="nav__item active"
+            className="nav__item"
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName="nav__item active"
+            className="nav__item"
+            to="/tabs"
+          >
+            Tabs
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
 
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/tabs" render={() => <Tabs tabs={tabs} />} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/tabs" render={() => <Tabs tabs={tabs} />} />
+    </Switch>
   </div>
 );
 
