@@ -45,7 +45,7 @@ const App: React.FC = () => (
 
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/tabs" render={() => <Tabs tabs={tabs} />} />
+      <Route path="/tabs/:tabsId?" render={({ match }) => <Tabs match={match} tabs={tabs} />} />
     </Switch>
   </div>
 );

@@ -1,20 +1,19 @@
 import React from 'react';
 import {
-  Switch,
   NavLink,
-  Route,
 } from 'react-router-dom';
 
 import { Tab } from '../Tab/Tab';
-import { TabInterface } from '../Interfaces/Interfaces';
+import { TabInterface, Match } from '../Interfaces/Interfaces';
 
 import './Tabs.css';
 
 type Props = {
   tabs: TabInterface[];
+  match: Match;
 };
 
-export const Tabs: React.FC<Props> = ({ tabs }) => (
+export const Tabs: React.FC<Props> = ({ match, tabs }) => (
   <>
     <h2>Tabs</h2>
     <div className="tabs-wrapper">
@@ -32,18 +31,11 @@ export const Tabs: React.FC<Props> = ({ tabs }) => (
           ))
         }
       </ul>
-      <Switch>
-        <Route
-          path="/tabs/:tab?"
-          render={({ match }) => (
-            <div className="info-wrapper">
-              <p className="info">
-                {tabs.find(tab => tab.id === match.params.tab)?.content}
-              </p>
-            </div>
-          )}
-        />
-      </Switch>
+      <div className="info-wrapper">
+        <p className="info">
+          {tabs.find(tab => tab.id === match.params.tabsId)?.content}
+        </p>
+      </div>
     </div>
   </>
 );
